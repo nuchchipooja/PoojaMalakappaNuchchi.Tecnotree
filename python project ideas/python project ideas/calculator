@@ -1,0 +1,32 @@
+#CALCULATOR5
+
+# Ask the user for two numbers
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+
+# Ask the user which arithmetic operation to perform
+operation = input("Which arithmetic operation do you want to perform (+, -, *, /)? ")
+
+# Perform the chosen arithmetic operation on the two numbers
+if operation == "+":
+    result = num1 + num2
+elif operation == "-":
+    result = num1 - num2
+elif operation == "*":
+    result = num1 * num2
+elif operation == "/":
+    if num2 == 0:
+        print("Invalid input. Denominator cannot be zero.")
+        exit()
+    elif num2 < 0:
+        print("Invalid input. Denominator cannot be negative.")
+        exit()
+    else:
+        result = num1 / num2
+else:
+    print("Invalid operation. Please try again.")
+    exit()
+
+# Display the result
+print(f"Result: {result}")
+
