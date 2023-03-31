@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<style>
+		form {
+			width: 500px;
+			margin: auto;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 10px;
+		}
+		
+
+	</style>
+<head>
+	<title>My Form</title>
+</head>
+<body>
+	<h1>Contact Form</h1>
+	<form action="#" method="post">
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name"><br><br>
+		
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email"><br><br>
+		
+		<label for="phone">Phone:</label>
+		<input type="tel" id="phone" name="phone"><br><br>
+		
+		
+		<label for="gender">Gender:</label>
+		<input type="radio" id="male" name="gender" value="male">
+		<label for="male">Male</label>
+		<input type="radio" id="female" name="gender" value="female">
+		<label for="female">Female</label><br><br>
+		
+		<label for="interests">Interests:</label>
+		<input type="checkbox" id="interest1" name="interest1" value="reading">
+		<label for="interest1">Reading</label>
+		<input type="checkbox" id="interest2" name="interest2" value="traveling">
+		<label for="interest2">Traveling</label>
+		<input type="checkbox" id="interest3" name="interest3" value="cooking">
+		<label for="interest3">Cooking</label><br><br>
+		
+		<label for="dob">Date of Birth:</label>
+		<input type="date" id="dob" name="dob"><br><br>
+		
+		<label for="country">Country:</label>
+		<select id="country" name="country">
+			<option value="USA">USA</option>
+			<option value="Canada">Canada</option>
+			<option value="India">india</option>
+			<option value="Other">Other</option>
+		</select><br><br>
+		
+		<td><input type="submit" value="Submit"></td>
+		<td><input type="reset" value="Reset"></td>
+		<td><input type="submit" value="Exit"></td>
+		
+	</form>
+</body>
+</html>

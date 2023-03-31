@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>My JavaScript Program</title>
+  </head>
+
+  <body>
+    <h3>to check for prime number</h3>
+  </body>
+<script>
+let num = 17; // example number to check
+
+let isPrime = true;
+
+for (let i = 2; i < num; i++) {
+  if (num % i === 0) {
+    isPrime = false;
+    break;
+  }
+}
+
+if (isPrime) {
+  console.log(num + " is a prime number");
+} else {
+  console.log(num + " is not a prime number");
+}
+</script></html>
