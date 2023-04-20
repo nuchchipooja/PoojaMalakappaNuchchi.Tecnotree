@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Website</title>
+	<style>
+        body {
+            background-image: url("");
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+        .balance {
+			margin-top: 100px;
+			font-size: 24px;
+		}
+
+		.balance span {
+			font-weight: bold;
+		}
+		/* Navigation bar styles */
+		nav {
+			background-color: #19181a;
+			color: #fff;
+			padding: 10px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 200px;
+			z-index: 999;
+		}
+
+		nav a {
+			color: #fff;
+			text-decoration: none;
+			margin-bottom: 10px;
+			font-size: 18px;
+			padding: 10px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		nav a:hover {
+			color: #fff;
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+        <h1>DASHBOARD</h1>
+		<a href="home.html">Home</a>
+		<a href="transfer.html">Transfer Amount</a>
+		<a href="withdraw.html">Withdraw Amount</a>
+		
+		<a href="intrest.html">Simple Interest Calculator</a>
+		<a href="/loan-request">Request for Loan</a>
+        <a href="/deposit">Deposit Money</a>
+		<a href="close_ac.html">Close Account</a>
+		
+	</nav>
+    <script>
+		// JavaScript code to update balance
+		function updateBalance(amount) {
+			var balanceElement = document.getElementById("balance");
+			var currentBalance = parseFloat(balanceElement.innerHTML);
+			var newBalance = currentBalance + amount;
+			balanceElement.innerHTML = newBalance.toFixed(2);
+		}
+
+		// Example usage: add 100 to current balance
+		updateBalance(100);
+	</script>
+
+
+
+<body>
+    <script>
+     function createAccount() {
+         const name = document.getElementById('name').value;
+         const address = document.getElementById('address').value;
+         const email = document.getElementById('email').value;
+         const phone = document.getElementById('phone').value;
+         
+     
+         // Perform validation checks here
+         if (!name || !address || !email || !phone ) {
+             alert('Please fill in all the details!');
+             return;
+         }
+     
+         const account = {
+             name: name,
+             address: address,
+             email: email,
+             phone: phone,
+         };
+     
+         // Add account to database or perform other necessary actions here
+     
+         alert('Profile updated successfully!');
+         // Redirect to account summary page here
+     }
+     </script>
+	<div class="container">
+		<h1>Update Profile</h1>
+		<form>
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" required>
+
+			<label for="address">Address:</label>
+			<input type="text" id="address" name="address" required>
+
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" required>
+
+			<label for="phone">Phone Number:</label>
+			<input type="tel" id="phone" name="phone" required>
+
+            <button type="button" onclick="updateProfile()">Update</button>
+		</form>
+	</div>
+    <style>
+        .container {
+         max-width: 500px;
+         margin: 0 auto;
+         padding: 20px;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+       }
+       body {
+           background-image:url("https://media.istockphoto.com/id/1366846888/photo/money-saving-and-investment-concept-hand-putting-coin-to-piggy-bank-on-pink-background-with.jpg?b=1&s=170667a&w=0&k=20&c=uVNpFlW7HJJugo0HzlKfiAOmwn3p8gUljeFJfRQA-nw=");
+           background-repeat: no-repeat;
+           background-size: cover;
+       
+       }
+       
+       
+       form label {
+           display: block;
+           margin-bottom: 10px;
+       }
+       
+       form input,
+       form select {
+           width: 100%;
+           padding: 10px;
+           border-radius: 3px;
+           border: 0.2cm;
+           margin-bottom: 20px;
+       }
+       
+       button {
+           background-color: #426bca;
+           border: none;
+           border-radius: 3px;
+           color: #ffffff9e;
+           cursor: pointer;
+           font-size: 16px;
+           padding: 10px;
+           transition: background-color 0.2s;
+           width: 100%;
+       }
+       
+       button:hover {
+           background-color: #30a940;
+       }
+       
+       p span {
+           font-weight: bold;
+       }
+       
+       </style>
+</body>
+</html>

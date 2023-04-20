@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Website</title>
+	<style>
+        body {
+            background-image: url("");
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+        .balance {
+			margin-top: 100px;
+			font-size: 24px;
+		}
+
+		.balance span {
+			font-weight: bold;
+		}
+		/* Navigation bar styles */
+		nav {
+			background-color: #4aa8da;
+			color: #fff;
+			padding: 10px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 200px;
+			z-index: 999;
+		}
+
+		nav a {
+			color: #fff;
+			text-decoration: none;
+			margin-bottom: 10px;
+			font-size: 18px;
+			padding: 10px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		nav a:hover {
+			color: #fff;
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+    
+	<nav>
+        <h1>POLICIES</h1>
+		<a href="p1.html">Home</a>
+		<a href="manage.html">Policy Management</a>
+		<a href="claim.html">Claim Management</a>
+		<a href="security.html">Security </a>
+        <a href="userdashboard.html">Dashboard</a>
+		<a href="close_ac.html">Close Account</a>
+    
+	</nav>
+    
+    <head>
+        <title>Policy Purchase Page</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: #333;
+        }
+        
+        h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        
+        div {
+            margin: 30px auto;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #0062cc;
+        }
+        
+        button:focus {
+            outline: none;
+        }
+        
+        @media screen and (max-width: 768px) {
+            div {
+                margin: 20px;
+            }
+        }
+    </style>
+        
+    </head>
+    <body>
+        <h1>Choose a Policy</h1>
+        <div>
+            <h2>Policy 1</h2>
+            <p>Description:Vehicle Insurance  </p>
+            <button onclick="window.open('policy1.pdf')">View Policy</button>
+            <button onclick="window.location.href='purchasepolicy.html'">Purchase Policy</button>
+        </div>
+        <div>
+            <h2>Policy 2</h2>
+            <p>Description:Life Insurance  </p>
+            <button onclick="window.open('policy2.pdf')">View Policy</button>
+            <button onclick="window.location.href='purchasepolicy.html'">Purchase Policy</button>
+        </div>
+        <div>
+            <h2>Policy 3</h2>
+            <p>Description:Home Insurance </p>
+            <button onclick="window.open('policy3.pdf')">View Policy</button>
+                <button onclick="window.location.href='purchasepolicy.html'">Purchase Policy</button>
+        </div>
+        <div>
+            <h2>Policy 4</h2>
+            <p>Description:Health Insurance </p>
+            <button onclick="window.open('policy3.pdf')">View Policy</button>
+                <button onclick="window.location.href='purchasepolicy.html'">Purchase Policy</button>
+        </div>
+    
+    </body>
+</body>
+</html>

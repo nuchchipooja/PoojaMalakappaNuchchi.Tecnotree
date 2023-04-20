@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Website</title>
+	<style>
+        body {
+            background-image: url("https://i.pinimg.com/originals/0e/47/72/0e47720e157806d45d45c736fb2fa920.gif");
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+        .balance {
+			margin-top: 100px;
+			font-size: 24px;
+		}
+
+		.balance span {
+			font-weight: bold;
+		}
+		/* Navigation bar styles */
+		nav {
+			background-color: #4aa8da;
+			color: #fff;
+			padding: 10px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 200px;
+			z-index: 999;
+		}
+
+		nav a {
+			color: #fff;
+			text-decoration: none;
+			margin-bottom: 10px;
+			font-size: 18px;
+			padding: 10px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		nav a:hover {
+			color: #fff;
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+        <h1>DASHBOARD</h1>
+		<a href="home.html">Home</a>
+		<a href="transfer.html">Transfer Amount</a>
+		<a href="withdraw.html">Withdraw Amount</a>
+		<a href="update_profile.html">Update Profile</a>
+		<a href="intrest.html">Simple Interest Calculator</a>
+		<a href="/loan-request">Request for Loan</a>
+        <a href="/deposit">Deposit Money</a>
+		<a href="close_ac.html">Close Account</a>
+		
+	</nav>
+    <script>
+		// JavaScript code to update balance
+		function updateBalance(amount) {
+			var balanceElement = document.getElementById("balance");
+			var currentBalance = parseFloat(balanceElement.innerHTML);
+			var newBalance = currentBalance + amount;
+			balanceElement.innerHTML = newBalance.toFixed(2);
+		}
+
+		// Example usage: add 100 to current balance
+		updateBalance(100);
+	</script>
+</body>
+</html>
