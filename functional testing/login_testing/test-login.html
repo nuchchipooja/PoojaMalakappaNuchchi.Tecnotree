@@ -1,0 +1,123 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+</head>
+<style>
+    body {
+	margin: 0;
+	padding: 0;
+    background-image: url("https://www.creativefabrica.com/wp-content/uploads/2021/06/17/Colorful-pastel-minimalist-background-Graphics-13505216-1-1-580x386.png");
+    background-repeat: cover;
+    background-size: cover;
+}
+
+.login-container {
+	width: 400px;
+	margin: 50px auto;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	padding: 20px;
+	text-align: center;
+}
+
+h1 {
+	margin-top: 0;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+label {
+	margin-bottom: 10px;
+	text-align: left;
+}
+
+input {
+	padding: 5px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+
+button {
+	padding: 10px;
+	background-color: #4CAF50;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+button[disabled] {
+	background-color: #ccc;
+	cursor: default;
+}
+
+a {
+	text-decoration: none;
+	color: #4CAF50;
+}
+
+</style>
+<body>
+	<div class="login-container">
+		<h1>Login</h1>
+		<form>
+			<label for="username">Username</label>
+			<input type="text" id="username" name="username" required>
+
+			<label for="password">Password</label>
+			<input type="password" id="password" name="password" required>
+			<span id="password-format-note" style="display: none; color: red;">Password must contain at least one digit, one lowercase letter, one uppercase letter, and be at least 8 characters long.</span>
+
+			<button type="submit" id="login-btn" disabled>Log in</button>
+		</form>
+        <br>
+		<a href="forgot_password.html">Forgot password?</a>
+	</div>
+
+	<script>
+		const usernameInput = document.getElementById("username");
+		const passwordInput = document.getElementById("password");
+		const loginBtn = document.getElementById("login-btn");
+		const passwordFormatNote = document.getElementById("password-format-note");
+
+		usernameInput.addEventListener("input", validateInputs);
+		passwordInput.addEventListener("input", validateInputs);
+		passwordInput.addEventListener("blur", validatePasswordFormat);
+
+		function validateInputs() {
+			if (usernameInput.value.trim() !== "" && passwordInput.value.trim() !== "") {
+				loginBtn.removeAttribute("disabled");
+			} else {
+				loginBtn.setAttribute("disabled", true);
+			}
+            
+		}
+
+		function validatePasswordFormat() {
+			const password = passwordInput.value;
+			if (password.length < 8 || !/\d/.test(password) || !/[a-z]/.test(password) || !/[A-Z]/.test(password)) {
+				passwordFormatNote.style.display = "block";
+				loginBtn.setAttribute("disabled", true);
+			} else {
+				passwordFormatNote.style.display = "none";
+				if (usernameInput.value.trim() !== "") {
+					loginBtn.removeAttribute("disabled");
+				}
+			}
+		}
+
+		form.addEventListener("submit", function(e) {
+			e.preventDefault();
+			alert("Login successful!");
+		});
+	</script>
+</body>
+</html>
+

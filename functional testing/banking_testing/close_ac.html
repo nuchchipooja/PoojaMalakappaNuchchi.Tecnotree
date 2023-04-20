@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Website</title>
+	<style>
+        body {
+            background-image: url("");
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+        .balance {
+			margin-top: 100px;
+			font-size: 24px;
+		}
+
+		.balance span {
+			font-weight: bold;
+		}
+		/* Navigation bar styles */
+		nav {
+			background-color: #19a9ec;
+			color: #fff;
+			padding: 10px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 200px;
+			z-index: 999;
+		}
+
+		nav a {
+			color: #fff;
+			text-decoration: none;
+			margin-bottom: 10px;
+			font-size: 18px;
+			padding: 10px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		nav a:hover {
+			color: #fff;
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+        <h1>DASHBOARD</h1>
+		<a href="home.html">Home</a>
+		<a href="transfer.html">Transfer Amount</a>
+		<a href="withdraw.html">Withdraw Amount</a>
+		<a href="update_profile.html">Update Profile</a>
+		<a href="intrest.html">Simple Interest Calculator</a>
+		<a href="/loan-request">Request for Loan</a>
+        <a href="/deposit">Deposit Money</a>
+		
+		
+	</nav>
+    <script>
+		// JavaScript code to update balance
+		function updateBalance(amount) {
+			var balanceElement = document.getElementById("balance");
+			var currentBalance = parseFloat(balanceElement.innerHTML);
+			var newBalance = currentBalance + amount;
+			balanceElement.innerHTML = newBalance.toFixed(2);
+		}
+
+		// Example usage: add 100 to current balance
+		updateBalance(100);
+	</script>
+
+
+
+<head>
+	<title>Banking App</title>
+	<style>
+		body {
+			background-image: url("https://thumbs.gfycat.com/JoyousInsidiousDamselfly-size_restricted.gif");
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+		}
+
+		h1 {
+			color: #444444;
+		}
+
+		h2 {
+			color: #666666;
+		}
+
+		form {
+			border: 1px solid #cccccc;
+			padding: 20px;
+			background-color: rgba(0,0,0,0.1);
+			border-radius: 5px;
+			box-shadow: 0 0 10px #cccccc;
+			max-width: 500px;
+			margin: 0 auto;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 10px;
+			color: #666666;
+		}
+
+		input {
+			padding: 10px;
+			border: 1px solid #cccccc;
+			border-radius: 5px;
+			margin-bottom: 20px;
+			font-size: 16px;
+			color: #333333;
+			width: 100%;
+			box-sizing: border-box;
+			-moz-box-align: baseline;
+		}
+
+		input[type="checkbox"] {
+			display: flex;
+            position: relative;
+			right: 245px;
+		}
+
+		button[type="submit"] {
+			padding: 10px;
+			background-color: #007bff;
+			color: #ffffff;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			transition: background-color 0.2s ease;
+		}
+
+		button[type="submit"]:hover {
+			background-color: #0062cc;
+		}
+        #checkText{
+            color: red;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            position: absolute;
+            top: 237px;
+            right: 520px;
+        }
+	</style>
+</head>
+<body>
+	<center>
+		<h1>Close Account</h1>
+	</center>
+	<form action="/close" method="POST">
+		<label for="account-number">Account Number</label>
+		<input type="number" id="account-number" name="account-number" required><br>
+        
+		<label for="reason"></label>
+		<select id="reason" name="reason" required>
+			<option value="" selected disabled>Please select a reason</option> 
+			<option value="Moving to another bank">Moving to another bank</option>
+			<option value="Financial difficulties">Financial difficulties</option>
+			<option value="Unsatisfactory service">Unsatisfactory service</option>
+			<option value="Other">Other</option>
+		</select> <br> 
+        <br>
+        <input type="checkbox" id="confirmation" name="confirmation" required> 
+		<label for="confirmation" id="checkText">Are you sure you want to close your account?</label> 
+        <button type="submit">Close Account</button>
+        
+	</form>
+    
+    
+	<script>
+		const closeForm = document.querySelector('form[action="/close"]');
+		closeForm.addEventListener('submit', (event) => {
+			event.preventDefault(); // prevent default form submission behavior
+			const accountNumber = document.getElementById('account-number').value;
+			const reason = document.getElementById('reason').value;
+			const confirmation = document.getElementById('confirmation').checked;
+
+			if (confirmation) {
+				// do something with form data, e.g. send request to server
+				console.log(`Closing account ${accountNumber} due to ${reason}`);
+			} else {
+				alert("Please confirm that you want to close your account.");
+            
+			}
+            alert('Account closed successfully!');
+		});
+        
+
+        
+        
+	</script>
+
+
+</body>
+
+</html

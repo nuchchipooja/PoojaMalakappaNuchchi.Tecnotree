@@ -1,0 +1,168 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+</head>
+<style>
+    body {
+	margin: 0;
+	padding: 0;
+    background-image: url("https://thenewdaily.com.au/wp-content/uploads/2019/07/1562735255-Savings.gif");
+    background-repeat: cover;
+    background-size: cover;
+}
+
+.login-container {
+	width: 400px;
+	margin: 50px auto;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	padding: 20px;
+	text-align: center;
+	justify-content: right;
+}
+
+h1 {
+	margin-top: 0;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+label {
+	margin-bottom: 10px;
+	text-align: left;
+}
+
+input {
+	padding: 5px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+
+button {
+	padding: 10px;
+	background-color: #4CAF50;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+button[disabled] {
+	background-color: #ccc;
+	cursor: default;
+}
+
+a {
+	text-decoration: none;
+	color: #4CAF50;
+}
+
+</style>
+<body>
+	<div class="login-container">
+		<h1>Login</h1>
+		<form>
+			<label for="username">Username</label>
+			<input type="text" id="username" name="username" required>
+
+			<label for="password">Password</label>
+			<input type="password" id="password1" name="password1" required>
+			<span id="password-format-note" style="display: none; color: red;">Password must contain at least one digit, one lowercase letter, one uppercase letter, and be at least 8 characters long.</span>
+
+			<!-- <button type="submit" id="login-btn" disabled>Log in</button> -->
+			<!-- <button type="submit" id="redirect-button">Login</button> -->
+			<input type="submit" value="Login" id="loginbtn">
+			
+		</form>
+		
+        <br>
+		<a href="forgot_password.html">Forgot password?</a>
+		
+	</div>
+
+	<script>
+
+
+form.addEventListener('submit', (event) => {
+			event.preventDefault();
+			const username = usernameField.value;
+			const password = passwordField.value;
+
+			// Validate the input fields
+			if (username.trim() === '' || password.trim() === '') {
+				alert('Please enter both username and password.');
+				return;
+			}
+
+			// Check if the credentials are valid
+			// Replace this with actual code to check credentials in a database or file
+			if (username === 'pooja' && password === 'Pooja@123') {
+				alert('Login successful!');
+				// Redirect the user to the main page of the website
+				window.location.href = 'admindashboard.html';
+			} else {
+				alert('Invalid username or password. Please try again.');
+			}
+		});
+
+		// const redirectButton = document.getElementById("redirect-button");
+
+		// redirectButton.addEventListener("click", function() {
+		// window.location.href = "dashboard.html";
+		// });
+
+		const usernameInput = document.getElementById("username");
+		const passwordInput = document.getElementById("password");
+		const loginBtn = document.getElementById("login-btn");
+		const passwordFormatNote = document.getElementById("password-format-note");
+
+		usernameInput.addEventListener("input", validateInputs);
+		passwordInput.addEventListener("input", validateInputs);
+		passwordInput.addEventListener("blur", validatePasswordFormat);
+
+		function validateInputs() {
+			if (usernameInput.value.trim() !== "" && passwordInput.value.trim() !== "") {
+				loginBtn.removeAttribute("disabled");
+			} else {
+				loginBtn.setAttribute("disabled", true);
+			}
+            // if (username === "Pooja" && password === "Pooja@123") {
+			// 	window.location.href = "dashboard.html"; // Redirect to dashboard page
+			// 	return false;
+			// } else {
+			// 	var loginError = document.getElementById("login-error");
+			// 	loginError.innerHTML = "Invalid username or password. Please try again.";
+			// 	return false;
+			// }
+		}
+
+		function validatePasswordFormat() {
+			const password = passwordInput.value;
+			if (password.length < 8 || !/\d/.test(password) || !/[a-z]/.test(password) || !/[A-Z]/.test(password)) {
+				passwordFormatNote.style.display = "block";
+				loginBtn.setAttribute("disabled", true);
+			} else {
+				passwordFormatNote.style.display = "none";
+				if (usernameInput.value.trim() !== "") {
+					loginBtn.removeAttribute("disabled");
+				}
+			}
+		}
+		
+
+		// form.addEventListener("submit", function(e) {
+		// 	e.preventDefault();
+		// 	alert("Login successful!");
+		// });
+	</script>
+	<script src="userlogin.js"></script>
+</body>
+</html>
+

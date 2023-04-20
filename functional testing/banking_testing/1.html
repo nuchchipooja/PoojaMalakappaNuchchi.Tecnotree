@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Banking App</title>
+</head>
+<style>
+    body {
+	font-family: Arial, sans-serif;
+}
+
+h1, h2 {
+	color: #005EB8;
+}
+
+form {
+	margin-bottom: 20px;
+}
+
+label {
+	display: inline-block;
+	width: 150px;
+	text-align: right;
+	margin-right: 10px;
+}
+
+input[type="text"],
+input[type="number"] {
+	padding: 5px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+	padding: 5px 10px;
+	border-radius: 5px;
+	background-color: #005EB8;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+
+nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+}
+
+nav li {
+	margin-right: 20px;
+}
+
+nav a {
+	color: #005EB8;
+	text-decoration: none;
+}
+
+#error-message {
+	font-weight: bold;
+}
+
+</style>
+<body>
+	<h1>Welcome to Banking App</h1>
+	<h2>Account Balance Information:</h2>
+	<p>Current Balance: $5000</p>
+	<hr>
+	<h2>Transfer Funds:</h2>
+	<form action="/transfer" method="POST">
+		<label for="recipient-account">Recipient Account Number:</label>
+		<input type="text" id="recipient-account" name="recipient-account" required><br>
+
+		<label for="transfer-amount">Transfer Amount:</label>
+		<input type="number" id="transfer-amount" name="transfer-amount" required><br>
+
+		<label for="verification-code">Verification Code:</label>
+		<input type="text" id="verification-code" name="verification-code"><br>
+
+		<button type="submit">Transfer Funds</button>
+	</form>
+	<hr>
+	<h2>Withdraw fund:</h2>
+	<form action="/withdraw" method="POST">
+		
+		<label for="transfer-amount">Amount:</label>
+		<input type="number" id="transfer-amount" name="transfer-amount" required><br>
+
+		<label for="verification-code">Verification Code:</label>
+		<input type="text" id="verification-code" name="verification-code"><br>
+
+		<button type="submit">Transfer Funds</button>
+	</form>
+	<hr>
+	<h2>Update Personal Information:</h2>
+	<form action="/update-info" method="POST">
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name" required><br>
+
+		<label for="address">Address:</label>
+		<input type="text" id="address" name="address"><br>
+
+		<label for="phone">Phone Number:</label>
+		<input type="text" id="phone" name="phone"><br>
+
+		<button type="submit">Update Information</button>
+	</form>
+	<hr>
+	<h2>Error Messages:</h2>
+	<p id="error-message" style="color: red;"></p>
+	<hr>
+	<nav>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="login.html">Logout</a></li>
+		</ul>
+	</nav>
+</script>
+<script src="dashboard.js"></script>
+</body>
+</html>
+
+
+//transfer--->https://img.etimg.com/thumb/msid-80352254,width-1200,height-900,imgsize-658708,resizemode-8/20210120_neobanks_01.jpg
+https://cdn.dribbble.com/users/400493/screenshots/7373374/media/f815b4f2df9fab70998c8af59eded942.gif
